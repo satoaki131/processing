@@ -1,0 +1,23 @@
+float brightness = 0;
+
+void setup(){
+  size(400, 400);
+  colorMode(HSB, 255);
+}
+
+void draw(){
+  int i, j, k;
+  for(i = 0; i < 300; i += 40){
+    for(j = 0; j < 200; j += 30){
+      for(k = 0; k < 600; k += 40){
+        fill(brightness, k, 255);
+        ellipse(200, k, j, brightness);
+        
+      }
+    }
+  }
+  brightness++;
+  if(300 < brightness){
+    brightness = 0;
+  }
+}
